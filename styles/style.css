@@ -1,0 +1,378 @@
+:root {
+  --transparente-aside: rgba(245, 255, 250, 0.9);
+  --gris: #808080;
+  --azul-hielo: #f0f8ff;
+  --blanco-humo: #f5f5f5;
+  --azul-oscuro: #153054;
+  --azul-rey: #0056b3;
+  --verde-oscuro: #1e392a;
+  --verde-rey: #008f37;
+  --verde-laguna: #5CAD80;
+  --color-secundario: #00ff00;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* aqui termina el formateador de css */
+
+/* componentes: */
+
+/* footer */
+footer {
+  background-color: #1e392a;
+  /* Verde oscuro */
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h3 {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+/* header */
+
+.header {
+  height: 10vh;
+  padding: 0px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.header__nav-ul {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+
+}
+
+.header__nav-link-logo-img {
+  height: 40px;
+}
+
+
+
+
+
+
+
+
+
+/* pages */
+
+/* login */
+.main__login {
+  background-image: url("../assets/imgs/policias-jovenes.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: inherit;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.main__login-blur {
+  height: 100vh;
+  /* padding: 0px 5vw; */
+  padding: 0px auto;
+  background-color: rgba(159, 176, 190, 0.557);
+  backdrop-filter: blur(5px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box__back {
+  width: 80%;
+  /* padding: 10px 20px; */
+  display: flex;
+  justify-content: center;
+  /* background-color: #1e392a; */
+  background-color: #1e392a6f;
+  backdrop-filter: blur(3px);
+
+}
+
+.box__back section {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  margin: 100px 40px;
+  color: var(--blanco-humo);
+  transition: all 500ms;
+}
+
+.container__login-register {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  bottom: 22%;
+  left: 10%;
+  transition: all 1s ease;
+}
+
+.container__login-register form {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 80px 20px;
+  position: absolute;
+  background-color: var(--blanco-humo);
+  border-radius: 15px;
+}
+
+.container__login-register form h3 {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.container__login-register form input {
+  padding: 5px;
+}
+
+.container__login-register--sub {
+  padding: 5px;
+  background-color: var(--verde-rey);
+  color: var(--azul-hielo);
+  font-size: 1.2rem;
+  border-color: transparent;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.form__login {}
+
+.form__register {
+  /* visibility: hidden; */
+}
+
+
+
+
+/* denuncia  */
+
+/* Estilos para el formulario de denuncia */
+.denuncia {
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+}
+
+.denuncia__form-radio {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8vw;
+}
+
+.denuncia__form-radio img {
+  margin-top: 5px;
+  width: 40px;
+}
+
+/* Estilos para las secciones del formulario */
+.denuncia__form {
+  margin-bottom: 00px;
+}
+
+/* Estilos para los párrafos dentro de las secciones */
+.denuncia__form p {
+  /* margin-bottom: 5px; */
+}
+
+/* Estilos para los input y select dentro de las secciones */
+.denuncia__form input[type="text"],
+.denuncia__form input[type="number"],
+.denuncia__form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Estilos para los radio buttons y labels */
+.denuncia__form input[type="radio"] {
+  display: none;
+}
+
+.denuncia__form input[type="radio"]+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Estilos para el texto de los radio buttons seleccionados */
+.denuncia__form input[type="radio"]:checked+label {
+  font-weight: bold;
+}
+
+/* Estilos para el botón del formulario */
+.denuncia__form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.denuncia__form input[type="submit"]:hover {
+  background-color: #45a049;
+}
