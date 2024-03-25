@@ -176,22 +176,40 @@ footer {
 }
 
 
+/* nav */
+
+
+
 /* header */
 
 .header {
   height: 10vh;
-  padding: 0px 36px;
+  /* min-height: 150px; */
+  /* padding: 0px 2vw; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
 }
 
+.header__nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header__nav-item {
+  display: flex;
+  justify-content: center;
+  width: 9rem;
+}
+
 .header__nav-ul {
   display: flex;
-  gap: 3rem;
+  gap: 2vh;
   align-items: center;
-
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .header__nav-link-logo-img {
@@ -207,6 +225,95 @@ footer {
 
 
 /* pages */
+
+
+/* home */
+
+.main {
+  overflow: hidden;
+}
+
+.main__canva {
+  height: 90vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.main__canva-cuadrilatero {
+  /* position: relative; */
+  z-index: 5;
+  border-top: 180vw solid var(--verde-oscuro);
+  border-right: 60vw solid transparent;
+}
+
+.main__canva-img {
+  position: relative;
+  bottom: 35px;
+  right: 40vw;
+  height: 100vh;
+}
+
+.main__canva-text {
+  max-width: 40vw;
+  height: 80vh;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /* position: relative;
+  z-index: 5;
+  right: 40vw;
+  font-family: 'Roboto-Bold', sans-serif;
+  color: var(--blanco-humo); */
+}
+
+.main__canva-text--h3 {
+  color: var(--blanco-humo);
+  font-size: 5rem;
+
+}
+
+
+.featured-videos {
+  background-color: #f0f0f0;
+  padding: 40px 0;
+}
+
+.featured-videos h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.video-item {
+  /* width: calc(33.33% - 20px); */
+  width: calc(32% - 20px);
+  margin-bottom: 20px;
+}
+
+.video-item iframe {
+  width: 100%;
+  border: 1px solid #ddd;
+  /* Añade un borde al video */
+}
+
+.video-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  /* Centra el texto de la descripción */
+}
+
+
 
 /* login */
 .main__login {
@@ -312,8 +419,16 @@ footer {
   background-color: #f0f0f0;
 }
 
+.denuncia__form-info {
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+}
+
 .denuncia__form-radio {
   height: 5vh;
+  /* display: ; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -335,6 +450,7 @@ footer {
 .denuncia__form p {
   /* margin-bottom: 5px; */
 }
+
 
 /* Estilos para los input y select dentro de las secciones */
 .denuncia__form input[type="text"],
@@ -376,3 +492,11 @@ footer {
 .denuncia__form input[type="submit"]:hover {
   background-color: #45a049;
 }
+
+.denuncia__form-carta--input {
+  height: 50vh !important;
+}
+
+
+
+/* Mostrar denuncias */
