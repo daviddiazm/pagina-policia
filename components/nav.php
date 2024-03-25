@@ -5,5 +5,6 @@
     <li class="header__nav-item"><a href="../pages/denuncia.php" class="header__nav-link">Ingresa tu denuncia</a></li>
     <li class="header__nav-item"><a href="#" class="header__nav-link">Sobre nosotros</a></li>
     <li class="header__nav-item"><a href="#" class="header__nav-link">Contactanos</a></li>
+    <li class="header__nav-item"><a href="../pages/mostrarDenuncias.php" class="header__nav-link">Ver denuncias</a></li>
   </ul>
 </nav>
