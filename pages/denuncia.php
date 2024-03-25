@@ -1,5 +1,23 @@
 <?php
-echo "";
+include("../conexion.php");
+
+if ($_POST) {
+  // $denunciaTexto = (isset($_POST['texto'])) ? $_POST['texto'] : "No hay texto";
+  // $query = "INSERT INTO cartas(contenido) VALUES('$denunciaTexto')";
+  // $ejecutar = mysqli_query($conexion, $query);
+
+  $tipoAnonimato = isset($_POST['radioAnonimoIdentificado']) ? $_POST['radioAnonimoIdentificado'] : "No seleccionado";
+  $nombre = isset($_POST['denuncianteNombre']) ? $_POST['denuncianteNombre'] : "No proporcionado";
+  $telefono = isset($_POST['denuncianteTelefono']) ? $_POST['denuncianteTelefono'] : "No proporcionado";
+  $correo = isset($_POST['denuncianteCorreo']) ? $_POST['denuncianteCorreo'] : "No proporcionado";
+  $tipoDoc = isset($_POST['selectTipoDoc']) ? $_POST['selectTipoDoc'] : "No seleccionado";
+  $numId = isset($_POST['denuncianteNumId']) ? $_POST['denuncianteNumId'] : "No proporcionado";
+  $denunciaTexto = isset($_POST['texto']) ? $_POST['texto'] : "No hay texto";
+
+  // Insertar los datos en la base de datos
+  $query = "INSERT INTO `denuncia` (`contenido`, `tipo_anonimato`, `nombre`, `telefono`, `correo`, `tipo_documento`, `numero_documento`) VALUES ('$denunciaTexto', '$tipoAnonimato', '$nombre', '$telefono', '$correo', '$tipoDoc', '$numId');";
+  $ejecutar = mysqli_query($conexion, $query);
+}
 ?>
 
 <?php include("../components/head.php") ?>
@@ -20,28 +38,27 @@ echo "";
           <img src="../assets/imgs/usuario.png" alt="">
         </label>
       </section>
-      <section class="denuncia__form">
+      <section class="denuncia__form denuncia__form-info">
         <!-- nombre completo, telefono, correo, tipo de documento, el numero de documento -->
         <h3>Nombre</h3>
-        <input type="text" name="denuncianteNombre" id="">
+        <input type="text" name="denuncianteNombre" id="nombre">
         <h3>Ingrese su telefono</h3>
-        <input type="text" name="denuncianteTelefono" id="">
+        <input type="number" name="denuncianteTelefono" id="telefono">
         <h3>Ingrese su correo electronico</h3>
-        <input type="text" name="denuncianteCorreo" id="">
+        <input type="text" name="denuncianteCorreo" id="correo">
         <h3>Seleccione su tipo de documento</h3>
-        <select name="selectTipoDoc" id="">
+        <select name="selectTipoDoc" id="tipoDocumento">
           <option value=""></option>
           <option value="TI">TI (tarjeta de identidad)</option>
           <option value="CC">CC (cedula de ciudadania)</option>
         </select>
         <h3>Digite su numero de identificacion</h3>
-        <input type="number" name="denuncianteNumId" id="">
+        <input type="number" name="denuncianteNumId" id="numeroId">
       </section>
       <section class="denuncia__form">
         <!-- la carta -->
-        <h3>En el siguiente apartado podra escribir su denuncia</h3>
-        <input type="text" name="denuncianteCarta" id="">
-        <!-- <area shape="" coords="" href="" alt=""> -->
+        <label for="texto">Escribe tu mensaje:</label><br>
+        <textarea id="texto" name="texto" rows="10" cols="197" class="denuncia__form-carta--area"></textarea>-->
       </section>
       <input type="submit" value="Enviar">
     </form>
@@ -57,21 +74,19 @@ echo "";
   var nombre = document.getElementById("nombre");
   var telefono = document.getElementById("telefono");
   var correo = document.getElementById("correo");
+  var denunciaInof = document.querySelector(".denuncia__form-info");
 
   if (rAnonimo.checkVisibility !== true || rIdentificado.checkVisibility !== true) {
     console.log('no ha seleccionado nada', );
   }
 
   rAnonimo.addEventListener("change", function() {
-    // if (rAnonimo.checked) {
-    //   nombre.style.display = "none";
-    //   telefono.style.display = "none";
-    //   correo.style.display = "none";
-    // } else {
-    //   nombre.style.display = "block";
-    //   telefono.style.display = "block";
-    //   correo.style.display = "block";
-    // }
+    if (rAnonimo.checked) {
+      // nombre.style.display = "none";
+      // telefono.style.display = "none";
+      // correo.style.display = "none";
+      denunciaInof.style.display = "none";
+    }
     if (rAnonimo.checkVisibility) {
       console.log('hola', rAnonimo);
     }
@@ -79,7 +94,9 @@ echo "";
   });
 
   rIdentificado.addEventListener("change", () => {
-    if (rIdentificado.checkVisibility) {
+
+    if (rIdentificado.checked) {
+      denunciaInof.style.display = "flex";
       console.log('hola', rIdentificado);
     }
   })
