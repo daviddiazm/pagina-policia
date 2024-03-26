@@ -57,14 +57,15 @@ if ($_POST) {
       </section>
       <section class="denuncia__form">
         <!-- la carta -->
-        <label for="texto">Escribe tu mensaje:</label><br>
-        <textarea id="texto" name="texto" rows="10" cols="197" class="denuncia__form-carta--area"></textarea>-->
+        <label for="texto">
+          <h3>Escribe tu mensaje:</h3>
+        </label><br>
+        <textarea id="texto" name="texto" rows="10" cols="100" class="denuncia__form-carta--area"></textarea>
       </section>
       <input type="submit" value="Enviar">
     </form>
   </main>
   <?php include("../components/footer.php") ?>
-
 
 </body>
 
