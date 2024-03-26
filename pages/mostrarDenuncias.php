@@ -15,7 +15,7 @@
   if ($resultado->num_rows > 0) {
     while ($fila = $resultado->fetch_assoc()) {
   ?>
-      <div class="denuncia">
+      <div class="ver-denuncia">
         <h2 class="">Tipo de anonimato: <?php echo $fila['tipo_anonimato']; ?></h2>
         <p>ID de la denuncia: <?php echo $fila['id']; ?></p>
         <p>Nombre del denunciante: <?php echo $fila['nombre']; ?></p>
