@@ -3,10 +3,11 @@
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
+    header("location: ./loginSingUp.php");
   echo '<script>
           alert("no has iniciado sesion");
         </script>';
-  header("location: ./loginSingUp.php");
+  
 }
 
 if ($_POST) {
