@@ -1,5 +1,11 @@
-<?php include("../components/head.php") ?>
+<?php
+$mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
+if (!empty($mensaje)) {
+  echo "<script>alert('$mensaje');</script>";
+}
+?>
 
+<?php include("../components/head.php") ?>
 <body>
   <main class="main__login">
     <div class="main__login-blur">
@@ -23,18 +29,19 @@
       </article>
 
       <section class="container__login-register">
-        <form action="./loginSingUp.php" method="post" class="form__login">
+        <form action="./loginUsuario.php" method="post" class="form__login">
           <h3>Iniciar sesion</h3>
           <input type="email" name="loginEmail" id="" placeholder="hola@email.com">
-          <input type="password" name="loginPass" id="">
+          <input type="password" name="loginPass" id="" placeholder="Contraseña">
           <input type="submit" value="Iniciar sesion" class="container__login-register--sub">
         </form>
 
-        <form action="./loginSingUp.php" method="post" class="form__register">
+        <form action="./registrarUsuario.php" method="post" class="form__register">
           <h3>Registrate</h3>
           <input type="text" name="registerName" id="" placeholder="Nombre Completo">
           <input type="email" name="registerEmail" id="" placeholder="hola@email.com">
           <input type="password" name="registerPass" id="" placeholder="Contraseña">
+          <input type="password" name="registerCodigo" id="" placeholder="Codigo">
           <input type="submit" value="Registrate" class="container__login-register--sub">
         </form>
       </section>
