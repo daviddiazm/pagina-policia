@@ -2,10 +2,6 @@
 include("../conexion.php");
 
 if ($_POST) {
-  // $denunciaTexto = (isset($_POST['texto'])) ? $_POST['texto'] : "No hay texto";
-  // $query = "INSERT INTO cartas(contenido) VALUES('$denunciaTexto')";
-  // $ejecutar = mysqli_query($conexion, $query);
-
   $tipoAnonimato = isset($_POST['radioAnonimoIdentificado']) ? $_POST['radioAnonimoIdentificado'] : "No seleccionado";
   $nombre = isset($_POST['denuncianteNombre']) ? $_POST['denuncianteNombre'] : "No proporcionado";
   $telefono = isset($_POST['denuncianteTelefono']) ? $_POST['denuncianteTelefono'] : "No proporcionado";
@@ -13,9 +9,11 @@ if ($_POST) {
   $tipoDoc = isset($_POST['selectTipoDoc']) ? $_POST['selectTipoDoc'] : "No seleccionado";
   $numId = isset($_POST['denuncianteNumId']) ? $_POST['denuncianteNumId'] : "No proporcionado";
   $denunciaTexto = isset($_POST['texto']) ? $_POST['texto'] : "No hay texto";
+  $genero = isset($_POST['selectGenero']) ? $_POST['selectGenero'] : "No seleccionado";
+  $rol = isset($_POST['selectRol']) ? $_POST['selectRol'] : "No seleccionado";
 
   // Insertar los datos en la base de datos
-  $query = "INSERT INTO `denuncia` (`contenido`, `tipo_anonimato`, `nombre`, `telefono`, `correo`, `tipo_documento`, `numero_documento`) VALUES ('$denunciaTexto', '$tipoAnonimato', '$nombre', '$telefono', '$correo', '$tipoDoc', '$numId');";
+  $query = "INSERT INTO `denuncia` (`contenido`, `tipo_anonimato`, `nombre`, `telefono`, `correo`, `tipo_documento`, `numero_documento`, `genero`, `rol`) VALUES ('$denunciaTexto', '$tipoAnonimato', '$nombre', '$telefono', '$correo', '$tipoDoc', '$numId', '$genero', '$rol');";
   $ejecutar = mysqli_query($conexion, $query);
 }
 ?>
@@ -38,6 +36,7 @@ if ($_POST) {
           <img src="../assets/imgs/usuario.png" alt="">
         </label>
       </section>
+
       <section class="denuncia__form denuncia__form-info">
         <!-- nombre completo, telefono, correo, tipo de documento, el numero de documento -->
         <h3>Nombre</h3>
@@ -55,6 +54,30 @@ if ($_POST) {
         <h3>Digite su numero de identificacion</h3>
         <input type="number" name="denuncianteNumId" id="numeroId">
       </section>
+
+      <section class="denuncia__form">
+        <h3>Seleccione su género</h3>
+        <select name="selectGenero" id="genero">
+          <option value=""></option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </section>
+
+      <!-- Nueva sección para seleccionar el rol -->
+      <section class="denuncia__form">
+        <h3>Seleccione su rol</h3>
+        <select name="selectRol" id="rol">
+          <option value=""></option>
+          <option value="Estudiante">Estudiante</option>
+          <option value="Docente">Docente</option>
+          <option value="Padre de familia">Padre de familia</option>
+        </select>
+      </section>
+
+
+
       <section class="denuncia__form">
         <!-- la carta -->
         <label for="texto">

@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+  echo '<script>
+          alert("no has iniciado sesion");
+        </script>';
+  header("location: ./loginSingUp.php");
+}
+
+?>
+
+
 <?php include("../components/head.php") ?>
 
 <body>
@@ -23,6 +37,8 @@
         <p>Correo electrónico del denunciante: <?php echo $fila['correo']; ?></p>
         <p>Tipo de documento del denunciante: <?php echo $fila['tipo_documento']; ?></p>
         <p>Número de documento del denunciante: <?php echo $fila['numero_documento']; ?></p>
+        <p>genero del denunciante: <?php echo $fila['genero']; ?></p>
+        <p>Rol denunciante: <?php echo $fila['rol']; ?></p>
         <p>Contenido de la denuncia: <?php echo "<br>" . $fila['contenido']; ?></p>
       </div>
       <hr>
