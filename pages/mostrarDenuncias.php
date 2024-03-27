@@ -9,6 +9,14 @@ if (!isset($_SESSION['usuario'])) {
   header("location: ./loginSingUp.php");
 }
 
+if ($_POST) {
+  $btnCerrarSesion = isset($_POST['btnCerrarSesion']) ? $_POST['btnCerrarSesion'] : NULL;
+  if (isset($btnCerrarSesion)) {
+    session_destroy();
+    header("location: ./loginSingUp.php");
+  }
+}
+
 ?>
 
 
@@ -16,6 +24,10 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
   <?php include("../components/header.php") ?>
+
+  <form action="./mostrarDenuncias.php" method="post">
+      <input type="submit" value="Cerrar sesion" name="btnCerrarSesion">
+  </form>
 
   <?php
   include("../conexion.php");
