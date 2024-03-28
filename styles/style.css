@@ -808,6 +808,14 @@ footer {
     color: var(--blanco-humo);
     font-size: 4rem;
   }
+
+
+  /* login */
+
+  .box__back {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 
