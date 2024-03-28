@@ -250,7 +250,7 @@ footer {
 /* header */
 
 .header {
-  height: 10vh;
+  min-height: 84px;
   /* min-height: 150px; */
   /* padding: 0px 2vw; */
   display: flex;
@@ -391,7 +391,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8vw;
+  gap: 4vw;
   flex-wrap: wrap;
 }
 
@@ -601,6 +601,7 @@ footer {
   align-items: center;
   text-align: center;
   gap: 8vw;
+  padding: 1vw;
 }
 
 .denuncia__form-radio img {
@@ -654,16 +655,35 @@ footer {
   background-color: #45a049;
 }
 
-.denuncia__form-carta--input {
-  height: 50vh !important;
+
+.denuncia__form-carta--area {
+  width: 90vw;
+  height: 30vh;
+  resize: vertical;
+
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
 }
+
+.denuncia__form-carta--area {}
 
 
 
 /* Mostrar denuncias */
 
+.mostrarDenuncias__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+}
 
 .ver-denuncia {
+  width: 70vw;
   background-color: #f9f9f9;
   padding: 20px;
   margin-bottom: 20px;
@@ -675,6 +695,11 @@ footer {
   font-size: 18px;
 }
 
+.ver-denuncia span {
+  font-weight: 700;
+  color: #007bff;
+}
+
 .ver-denuncia p {
   margin: 5px 0;
 }
@@ -684,6 +709,16 @@ footer {
   margin-top: 20px;
 }
 
+.mostrarDenuncias__container input {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnCerrarSesion {}
 
 
 
@@ -713,4 +748,74 @@ footer {
 
 .consecuencia p {
   color: #666;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+  /* components */
+  .header {
+    flex-direction: column;
+  }
+
+
+
+
+
+
+  /* pages */
+  /* homee */
+  .main {
+    overflow: hidden;
+  }
+
+  .main__canva {
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+  }
+
+  .main__canva-cuadrilatero {
+    z-index: 5;
+    border-right: 100vw solid transparent;
+    background-color: var(--verde-oscuro);
+  }
+
+  .main__canva-img {
+    position: relative;
+  }
+
+  .main__canva-text {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+    height: 80vh;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main__canva-text--h3 {
+    color: var(--blanco-humo);
+    font-size: 4rem;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+  /*  */
 }
