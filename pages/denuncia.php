@@ -83,7 +83,8 @@ if ($_POST) {
         <label for="texto">
           <h3>Escribe tu mensaje:</h3>
         </label><br>
-        <textarea id="texto" name="texto" rows="10" cols="100" class="denuncia__form-carta--area"></textarea>
+        <!-- <textarea id="texto" name="texto" rows="10" cols="100" class="denuncia__form-carta--area"></textarea> -->
+        <textarea id="texto" name="texto" class="denuncia__form-carta--area"></textarea>
       </section>
       <input type="submit" value="Enviar">
     </form>
