@@ -809,6 +809,15 @@ footer {
     font-size: 4rem;
   }
 
+  .noticias {
+    gap: 10vh;
+    flex-direction: column;
+  }
+
+  .noticas__item {
+    width: 100%;
+  }
+
 
   /* login */
 
