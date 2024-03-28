@@ -457,6 +457,27 @@ footer {
   /* Centra el texto de la descripción */
 }
 
+.noticias__container {
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vw;
+}
+
+.noticias {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  flex-wrap: wrap;
+}
+
+.noticas__item {
+  margin-bottom: 20px;
+}
+
 
 
 /* login */
@@ -587,18 +608,15 @@ footer {
   width: 40px;
 }
 
-/* Estilos para las secciones del formulario */
 .denuncia__form {
   margin-bottom: 00px;
 }
 
-/* Estilos para los párrafos dentro de las secciones */
 .denuncia__form p {
   /* margin-bottom: 5px; */
 }
 
 
-/* Estilos para los input y select dentro de las secciones */
 .denuncia__form input[type="text"],
 .denuncia__form input[type="number"],
 .denuncia__form select {
@@ -610,7 +628,6 @@ footer {
   box-sizing: border-box;
 }
 
-/* Estilos para los radio buttons y labels */
 .denuncia__form input[type="radio"] {
   display: none;
 }
@@ -620,12 +637,10 @@ footer {
   cursor: pointer;
 }
 
-/* Estilos para el texto de los radio buttons seleccionados */
 .denuncia__form input[type="radio"]:checked+label {
   font-weight: bold;
 }
 
-/* Estilos para el botón del formulario */
 .denuncia__form input[type="submit"] {
   background-color: #4CAF50;
   color: white;
@@ -667,4 +682,35 @@ footer {
 .ver-denuncia hr {
   border: 1px solid #ccc;
   margin-top: 20px;
+}
+
+
+
+
+
+/* consecuencias */
+
+.main__consecuencias {
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.main__consecuencias h1 {
+  text-align: center;
+  color: #333;
+}
+
+.consecuencia {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.consecuencia h2 {
+  color: #007bff;
+}
+
+.consecuencia p {
+  color: #666;
 }
