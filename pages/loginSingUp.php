@@ -6,6 +6,7 @@ if (!empty($mensaje)) {
 ?>
 
 <?php include("../components/head.php") ?>
+
 <body>
   <main class="main__login">
     <div class="main__login-blur">
@@ -56,17 +57,38 @@ if (!empty($mensaje)) {
     var caja_trasera_login = document.querySelector("box__back-login")
     var caja_trasera_register = document.querySelector("box__back-register")
 
+    // function login() {
+    //   formulario__register.style.visibility = "hidden";
+    //   formulario__login.style.visibility = "visible"
+    //   formulario__login.style.right = "100%"
+    // }
+
+
+    // function register() {
+    //   formulario__login.style.visibility = "hidden"
+    //   formulario__register.style.visibility = "visible"
+    //   formulario__register.style.left = "10%"
+    // }
     function login() {
       formulario__register.style.visibility = "hidden";
-      formulario__login.style.visibility = "visible"
-      formulario__login.style.right = "100%"
+      formulario__login.style.visibility = "visible";
+      if (window.innerWidth <= 768) { // Si es un dispositivo móvil o tiene un ancho de pantalla menor o igual a 768px
+        formulario__login.style.bottom = "100px";
+        formulario__login.style.right = "30px";
+      } else {
+        formulario__login.style.right = "100%";
+      }
     }
 
-
     function register() {
-      formulario__login.style.visibility = "hidden"
-      formulario__register.style.visibility = "visible"
-      formulario__register.style.left = "10%"
+      formulario__login.style.visibility = "hidden";
+      formulario__register.style.visibility = "visible";
+      if (window.innerWidth <= 768) { // Si es un dispositivo móvil o tiene un ancho de pantalla menor o igual a 768px
+        formulario__register.style.right = "30px";
+        formulario__register.style.top = "-250px";
+      } else {
+        formulario__register.style.left = "10%";
+      }
     }
   </script>
 </body>
